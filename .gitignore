@@ -1,0 +1,6 @@
+config.def.h
+dwm-*.tar.gz
+dwm-*.tar.zst
+dwm-*.diff
+pkg/
+src/
