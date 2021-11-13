@@ -86,6 +86,9 @@ static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
 static const char *screenshot[] = { "/usr/bin/scrot", "-e", "mv $f ~/screenshots", NULL };
 static const char *screenshot_select[] = { "/usr/bin/scrot", "-e", "mv $f ~/screenshots", "--select", NULL };
+static const char *dunst_close[] = { "/usr/bin/dunstctl", "close" };
+static const char *dunst_close_all[] = { "/usr/bin/dunstctl", "close-all" };
+static const char *dunst_history[] = { "/usr/bin/dunstctl", "history-pop" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -96,6 +99,9 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute,        spawn, {.v = mutevol } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+	{ ControlMask|Mod1Mask,         XK_space,  spawn,          {.v = dunst_close } },
+	{ ControlMask|ShiftMask,        XK_space,  spawn,          {.v = dunst_close_all } },
+	{ ControlMask|ShiftMask,        XK_BackSpace, spawn,       {.v = dunst_history } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
