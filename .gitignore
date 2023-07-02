@@ -2,5 +2,6 @@ config.def.h
 dwm-*.tar.gz
 dwm-*.tar.zst
 dwm-*.diff
+!dwm-autostart-20210120-cb3f58a.diff
 pkg/
 src/
