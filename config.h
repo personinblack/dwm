@@ -11,7 +11,7 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx      = 0;        /* border pixel of windows */
+static const unsigned int borderpx      = 1;        /* border pixel of windows */
 static const int startwithgaps          = 1;        /* 1 means gaps are used by default */
 static const unsigned int gappx         = 7;        /* gaps between windows */
 static const unsigned int snap          = 1;        /* snap pixel */
@@ -21,15 +21,15 @@ static const char *fonts[]              = { "scientifica:size=10:style=Bold", "S
 static const char dmenufont[]           = "scientifica:size=10:style=Bold";
 static const unsigned int baralpha      = OPAQUE;
 static const unsigned int borderalpha   = OPAQUE;
-static const char col_selbg[]           = "#0D0E0E";
-static const char col_normbg[]          = "#0D0E0E";
-static const char col_selfg[]           = "#f49d3e";
-static const char col_normfg[]          = "#fff3cd";
-static const char col_black[]           = "#0d0e0e";
+static const char col_selbg[]           = "#000000";
+static const char col_normbg[]          = "#000000";
+static const char col_selfg[]           = "#a7a099";
+static const char col_normfg[]          = "#4e4a4b";
 static const char *colors[][3]          = {
 	/*               fg             bg          border      */
-	[SchemeNorm] = { col_normfg,    col_normbg, col_normbg  },
-	[SchemeSel]  = { col_selfg,     col_normbg, col_selbg   },
+	[SchemeNorm] = { col_normfg,    col_normbg, "#201e24" },
+	[SchemeSel]  = { col_selfg,     col_normbg, "#837e81" },
+	[SchemeStat] = { col_selfg,     col_normbg, "#201e24" },
 };
 static const unsigned int alphas[][3]   = {
 	/*               fg             bg          border     */
@@ -38,7 +38,7 @@ static const unsigned int alphas[][3]   = {
 };
 
 /* tagging */
-static const char *tags[] = { "00", "02", "03", "04", "05", "06", "07", "08", "09" };
+static const char *tags[] = { "01", "02", "03", "04", "05", "06", "07", "08", "09" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -80,7 +80,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
 	"dmenu_run", "-i", "-m", dmenumon, "-fn", dmenufont,
-	"-nb", col_normbg, "-nf", col_normfg, "-sb", col_selfg, "-sf", col_black, NULL
+	"-nb", col_normbg, "-nf", col_normfg, "-sb", col_selfg, "-sf", col_selbg, NULL
 };
 static const char *termcmd[]           = { "st", NULL };
 static const char *upvol[]             = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
@@ -134,10 +134,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,               focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,               tagmon,         {.i = +1 } },
-	// { MODKEY,                       XK_minus,                setgaps,        {.i = -1 } },
-	// { MODKEY|ShiftMask,             XK_minus,                setgaps,        {.i = +1 } },
-	// { MODKEY|ShiftMask,             XK_asterisk,             setgaps,        {.i = GAP_RESET  } },
-	// { MODKEY,                       XK_asterisk,             setgaps,        {.i = GAP_TOGGLE  } },
 	TAGKEYS(                        XK_1,                                    0)
 	TAGKEYS(                        XK_2,                                    1)
 	TAGKEYS(                        XK_3,                                    2)

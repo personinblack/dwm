@@ -18,8 +18,8 @@ source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
 	https://dwm.suckless.org/patches/alwaysfullscreen/dwm-alwaysfullscreen-20160713-56a31dc.diff
 	https://dwm.suckless.org/patches/alpha/dwm-alpha-20180613-b69c870.diff
   https://dwm.suckless.org/patches/ewmhtags/dwm-ewmhtags-6.2.diff
-  # https://dwm.suckless.org/patches/functionalgaps/dwm-functionalgaps-6.2.diff
-	dwm-autostart-20210120-cb3f58a.diff
+	dwm-autostart-20210120-cb3f58a.diff.local
+  dwm-statuscol-20232312.diff.local
 	dwm.desktop)
 sha256sums=('fa9c0d69a584485076cfc18809fd705e5c2080dafb13d5e729a3646ca7703a6e'
             '7b4cabdccc8af6ee3d3819452e5028dd9d926b1edc4496f102e19210f0fcd785'
@@ -27,6 +27,7 @@ sha256sums=('fa9c0d69a584485076cfc18809fd705e5c2080dafb13d5e729a3646ca7703a6e'
             '568bbc45091da2ebfb72e71dbf653899723ec235adc4007602edb0522541f9d5'
             'e027e683c074f4cd00c52f07c81be9d64d4085ef5b0a570b1fb80b8f4668c100'
             '40307cb73788cfc600006a124d98067c1a92aee35ad96b5821f2e836fd3c492b'
+            '19d8f7b59fb9e5d70d612af97811e4cb2b919eb451e281d07964b051bf791acf'
             'bc36426772e1471d6dd8c8aed91f288e16949e3463a9933fee6390ee0ccd3f81')
 _sourcedir=$pkgname-$pkgver
 
@@ -46,7 +47,7 @@ prepare() {
   cd "$srcdir/$pkgname-$pkgver"
 
   # Apply custom patches
-  patches="$(find $srcdir -maxdepth 1 -regextype posix-extended -regex '.*/dwm-.+\.diff$')"
+  patches="$(find $srcdir -maxdepth 1 -regextype posix-extended -regex '.*/dwm-.+\.diff.*$')"
   for patch in $patches; do
       warning "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       warning "$patch"
