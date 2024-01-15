@@ -1,4 +1,4 @@
-/* vim:fenc=utf-8:ts=4:noet
+/* vim:fenc=utf-8:ts=2:noet:tw=0:nowrap
  *
  *          DWM Configuration File
  *
@@ -58,11 +58,14 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen window */
 
+#include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
+  { "D",      dwindle },
 	{ "T",      tile },    /* first entry is default */
 	{ "F",      NULL },    /* no layout function means floating behavior */
-	{ "M",      monocle },
+  { "M",      monocle },
+  { "S",      spiral },
 };
 
 /* key definitions */
@@ -122,9 +125,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return,               zoom,           {0} },
 	{ MODKEY,                       XK_Tab,                  view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,                    killclient,     {0} },
-	{ MODKEY,                       XK_t,                    setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,                    setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,                    setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_r,                    setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_t,                    setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_f,                    setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,                    setlayout,      {.v = &layouts[3]} },
+	{ MODKEY|ShiftMask,             XK_r,                    setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_f,                    togglefullscr,  {0} },
 	{ MODKEY,                       XK_space,                setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                togglefloating, {0} },
@@ -151,7 +156,7 @@ static Key keys[] = {
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[3]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
