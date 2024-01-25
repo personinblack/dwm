@@ -19,7 +19,7 @@ static const int showbar                = 1;        /* 0 means no bar */
 static const int topbar                 = 1;        /* 0 means bottom bar */
 static const char *fonts[]              = { "scientifica:size=10", "Symbola:style=Regular:size=10" };
 static const char dmenufont[]           = "scientifica:size=10";
-static const unsigned int baralpha      = OPAQUE;
+static const unsigned int baralpha      = 0xb0;
 static const unsigned int borderalpha   = OPAQUE;
 static const char col_selbg[]           = "#000000";
 static const char col_normbg[]          = "#000000";
