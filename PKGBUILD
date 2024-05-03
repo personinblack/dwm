@@ -1,11 +1,12 @@
-# Maintainer: Neptune <neptune650@proton.me>
+# Maintainer: Thule <vincenzo.frascino@proton.me>
+# Contributor: Neptune <neptune650@proton.me>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Dag Odenhall <dag.odenhall@gmail.com>
 # Contributor: Grigorios Bouzakis <grbzks@gmail.com>
 
 pkgname=dwm
-pkgver=6.4
-pkgrel=2
+pkgver=6.5
+pkgrel=1
 pkgdesc="A dynamic window manager for X"
 url="https://dwm.suckless.org"
 arch=('i686' 'x86_64' 'arm' 'armv7h' 'armv6h' 'aarch64')
@@ -17,7 +18,7 @@ source=(dwm.desktop
         https://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
         config.h)
 sha256sums=('bc36426772e1471d6dd8c8aed91f288e16949e3463a9933fee6390ee0ccd3f81'
-            'fa9c0d69a584485076cfc18809fd705e5c2080dafb13d5e729a3646ca7703a6e'
+            '21d79ebfa9f2fb93141836c2666cb81f4784c69d64e7f1b2352f9b970ba09729'
             'SKIP')
 
 prepare() {
