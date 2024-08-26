@@ -23,7 +23,7 @@ source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
 	dwm-autostart-20210120-cb3f58a.diff.local
   dwm-statuscol-20232312.diff.local
 	dwm.desktop)
-sha256sums=('fa9c0d69a584485076cfc18809fd705e5c2080dafb13d5e729a3646ca7703a6e'
+sha256sums=('21d79ebfa9f2fb93141836c2666cb81f4784c69d64e7f1b2352f9b970ba09729'
             '7b4cabdccc8af6ee3d3819452e5028dd9d926b1edc4496f102e19210f0fcd785'
             'c75906894066180b7f8ba6d2d2352f3fad33cebcb5c9e10c63a1f28e54588a66'
             '1eee5fffb3b2668a2c20b16307071caa9622a66da1c8accb23a7e4abe8326664'
