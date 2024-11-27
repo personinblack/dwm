@@ -11,32 +11,25 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx      = 1;        /* border pixel of windows */
+static const unsigned int borderpx      = 0;        /* border pixel of windows */
 static const int startwithgaps          = 1;        /* 1 means gaps are used by default */
 static const unsigned int gappx         = 7;        /* gaps between windows */
 static const unsigned int snap          = 1;        /* snap pixel */
 static const int showbar                = 1;        /* 0 means no bar */
 static const int topbar                 = 1;        /* 0 means bottom bar */
-// static const char *fonts[]              = { "scientifica:size=6", "Symbola:style=Regular:size=6" };
-// static const char dmenufont[]           = "scientifica:size=6";
-static const char *fonts[]              = { "scientifica:size=12", "Symbola:style=Regular:size=6" };
-static const char dmenufont[]           = "scientifica:size=12";
-static const unsigned int baralpha      = 0xb0;
-static const unsigned int borderalpha   = OPAQUE;
+static const char *fonts[]              = { "Cozette", "Symbola:style=Regular:size=6" };
+static const char dmenufont[]           = "Cozette";
+// static const char *fonts[]              = { "scientifica:size=12", "Symbola:style=Regular:size=6" };
+// static const char dmenufont[]           = "scientifica:size=12";
 static const char col_selbg[]           = "#000000";
 static const char col_normbg[]          = "#000000";
-static const char col_selfg[]           = "#a7a099";
-static const char col_normfg[]          = "#4e4a4b";
+static const char col_selfg[]           = "#adadad";
+static const char col_normfg[]          = "#4d4d4d";
 static const char *colors[][3]          = {
 	/*               fg             bg          border      */
-	[SchemeNorm] = { col_normfg,    col_normbg, "#201e24" },
-	[SchemeSel]  = { col_selfg,     col_normbg, "#837e81" },
-	[SchemeStat] = { col_selfg,     col_normbg, "#201e24" },
-};
-static const unsigned int alphas[][3]   = {
-	/*               fg             bg          border     */
-	[SchemeNorm] = { OPAQUE,        baralpha,   borderalpha },
-	[SchemeSel]  = { OPAQUE,        baralpha,   borderalpha },
+	[SchemeNorm] = { col_normfg,    col_normbg, "#000000" },
+	[SchemeSel]  = { col_selfg,     col_normbg, "#000000" },
+	[SchemeStat] = { col_selfg,     col_normbg, "#000000" },
 };
 
 /* tagging */
@@ -60,14 +53,11 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen window */
 
-#include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-  { "D",      dwindle },
 	{ "T",      tile },    /* first entry is default */
 	{ "F",      NULL },    /* no layout function means floating behavior */
   { "M",      monocle },
-  { "S",      spiral },
 };
 
 /* key definitions */
@@ -127,11 +117,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return,               zoom,           {0} },
 	{ MODKEY,                       XK_Tab,                  view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,                    killclient,     {0} },
-	{ MODKEY,                       XK_r,                    setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_t,                    setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_f,                    setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_m,                    setlayout,      {.v = &layouts[3]} },
-	{ MODKEY|ShiftMask,             XK_r,                    setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_t,                    setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_f,                    setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_m,                    setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_f,                    togglefullscr,  {0} },
 	{ MODKEY,                       XK_space,                setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                togglefloating, {0} },
@@ -141,6 +129,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,               focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,               tagmon,         {.i = +1 } },
+  { MODKEY,                       XK_Next,                 setgaps,        {.i = -1 } },
+  { MODKEY,                       XK_Prior,                setgaps,        {.i = +1 } },
+  { MODKEY|ShiftMask,             XK_Home,                 setgaps,        {.i = GAP_RESET } },
+  { MODKEY,                       XK_Home,                 setgaps,        {.i = GAP_TOGGLE} },
 	TAGKEYS(                        XK_1,                                    0)
 	TAGKEYS(                        XK_2,                                    1)
 	TAGKEYS(                        XK_3,                                    2)

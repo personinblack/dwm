@@ -16,19 +16,13 @@ depends=('libx11' 'libxinerama' 'libxft' 'freetype2')
 install=dwm.install
 source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
 	https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20191112-cb3f58a.diff
-	https://dwm.suckless.org/patches/alwaysfullscreen/dwm-alwaysfullscreen-20160713-56a31dc.diff
-	https://dwm.suckless.org/patches/alpha/dwm-alpha-20230401-348f655.diff
-  https://dwm.suckless.org/patches/ewmhtags/dwm-ewmhtags-6.2.diff
-  https://dwm.suckless.org/patches/fibonacci/dwm-fibonacci-20200418-c82db69.diff
+  https://dwm.suckless.org/patches/functionalgaps/dwm-functionalgaps-6.2.diff
 	dwm-autostart-20210120-cb3f58a.diff.local
   dwm-statuscol-20232312.diff.local
 	dwm.desktop)
 sha256sums=('21d79ebfa9f2fb93141836c2666cb81f4784c69d64e7f1b2352f9b970ba09729'
             '7b4cabdccc8af6ee3d3819452e5028dd9d926b1edc4496f102e19210f0fcd785'
-            'c75906894066180b7f8ba6d2d2352f3fad33cebcb5c9e10c63a1f28e54588a66'
-            '1eee5fffb3b2668a2c20b16307071caa9622a66da1c8accb23a7e4abe8326664'
-            'e027e683c074f4cd00c52f07c81be9d64d4085ef5b0a570b1fb80b8f4668c100'
-            '2d1176728fc04308ab97cb9f2b628fd00038b2fb4162e84de339164fed9cc48b'
+            'e7e1911720df4b8ebfe989dd3bfe974d6dee06621ddace1bebd64364e97b8aa1'
             '40307cb73788cfc600006a124d98067c1a92aee35ad96b5821f2e836fd3c492b'
             '19d8f7b59fb9e5d70d612af97811e4cb2b919eb451e281d07964b051bf791acf'
             'bc36426772e1471d6dd8c8aed91f288e16949e3463a9933fee6390ee0ccd3f81')
