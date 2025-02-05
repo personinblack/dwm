@@ -17,8 +17,8 @@ static const unsigned int gappx         = 7;        /* gaps between windows */
 static const unsigned int snap          = 1;        /* snap pixel */
 static const int showbar                = 1;        /* 0 means no bar */
 static const int topbar                 = 1;        /* 0 means bottom bar */
-static const char *fonts[]              = { "Cozette", "Symbola:style=Regular:size=6" };
-static const char dmenufont[]           = "Cozette";
+static const char *fonts[]              = { "Cozette:size=11", "Symbola:style=Regular:size=6" };
+static const char dmenufont[]           = "Cozette:size=11";
 // static const char *fonts[]              = { "scientifica:size=12", "Symbola:style=Regular:size=6" };
 // static const char dmenufont[]           = "scientifica:size=12";
 static const char col_selbg[]           = "#000000";
