@@ -40,11 +40,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "discord",  NULL,       NULL,       1 << 2,       0,           -1 },
-	{ NULL,       NULL,       "Farge",    0,            1,           -1 },
-	{ NULL,       NULL,       "VLC media player",       1 << 8,      0,           -1 },
+	/* class			instance      title								tags mask     isfloating   monitor */
+	{ "zen-beta", "Navigator",  NULL,								1 << 1,       0,           -1 },
+	{ "legcord",	"legcord",    NULL,								1 << 2,       0,           -1 },
+	{ NULL,				NULL,         "Farge",						0,            1,           -1 },
+	{ NULL,				NULL,         "VLC media player", 1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
